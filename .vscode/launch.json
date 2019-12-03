@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PerimetroCircunferencia",
+            "request": "launch",
+            "mainClass": "tema2.PerimetroCircunferencia",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HolaMundo",
+            "request": "launch",
+            "mainClass": "tema2.HolaMundo",
+            "projectName": "practicasjava_86a4be5a"
+        }
+    ]
+}
