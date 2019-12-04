@@ -2,6 +2,7 @@ package tema2;
 
 /**
  * PerimetroCircunferencia
+ * pag.10
  */
 public class PerimetroCircunferencia {
 
