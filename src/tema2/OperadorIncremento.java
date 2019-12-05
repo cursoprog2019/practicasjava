@@ -2,7 +2,7 @@ package tema2;
 
 /**
  * OperadorIncremento
- * pag. 179
+ * pag. 179 (anexo A)
  */
 public class OperadorIncremento {
 

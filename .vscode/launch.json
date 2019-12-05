@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsaVehiculo",
+            "request": "launch",
+            "mainClass": "tema3.UsaVehiculo",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaCirculo",
+            "request": "launch",
+            "mainClass": "tema2.usaCirculo",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - usaCirculo",
             "request": "launch",
             "mainClass": "tema3.usaCirculo",

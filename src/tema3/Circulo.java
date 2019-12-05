@@ -4,7 +4,8 @@ package tema3;
  * pag.26
  */
 public class Circulo {
-    int x;
-    int y;
-    int radio;   
+    public int x;
+    public int y;
+    public int radio; 
+    // el public permite acceder desde otros paquetes  
 }
