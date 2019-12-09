@@ -59,4 +59,11 @@ public class Vehiculo {
     }
     // - otros métodos
 
+    public String getAtributos() {
+        return "Matrícula: " + this.matricula +
+        " Modelo: " + this.marca + " " + this.modelo +
+        " Color: " + this.color +
+        " Tarifa: " + this.tarifa +
+        " Disponible: " + this.disponible;
+        }
 }

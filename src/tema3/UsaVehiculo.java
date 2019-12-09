@@ -84,5 +84,8 @@ public class UsaVehiculo {
         System.out.println("Matricula3 : " + vehiculo3.getMatricula());
         System.out.println("Tarifa3 : " + vehiculo3.getTarifa());
 
+        // pag.43 uso del método getAtributos()
+        System.out.println("Atributos de vehiculo3: " + vehiculo3.getAtributos());
+        
     }
 }
