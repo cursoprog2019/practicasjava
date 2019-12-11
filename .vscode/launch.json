@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsaSobreCarga",
+            "request": "launch",
+            "mainClass": "tema3.UsaSobreCarga",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VariableLocal",
+            "request": "launch",
+            "mainClass": "tema3.VariableLocal",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UsaMatematicas",
             "request": "launch",
             "mainClass": "tema3.UsaMatematicas",
