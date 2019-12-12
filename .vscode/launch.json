@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PruebaHerencia",
+            "request": "launch",
+            "mainClass": "tema4.PruebaHerencia",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MisVehiculos",
+            "request": "launch",
+            "mainClass": "tema4.MisVehiculos",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UsaSobreCarga",
             "request": "launch",
             "mainClass": "tema3.UsaSobreCarga",
