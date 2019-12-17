@@ -2,9 +2,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - PruebaHerencia",
+            "name": "CodeLens (Launch) - Condicionales",
             "request": "launch",
-            "mainClass": "tema4.PruebaHerencia",
+            "mainClass": "tema6.Condicionales",
             "projectName": "practicasjava_86a4be5a"
         }
     ]
