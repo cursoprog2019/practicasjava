@@ -1,5 +1,7 @@
 package tema6;
 
+import java.util.Scanner;
+
 /**
  * Condicionales
  */
@@ -21,6 +23,11 @@ public class Condicionales {
         } else {
             System.out.println("2.Suspenso");
         }
+        // 2a. Operador condicional
+        int nota2a = 4;
+        String txt = "";
+        txt = (nota2a >= 5) ? "2a.Aprobado" : "2a.Suspenso";
+        System.out.println(txt);
         // 3. Anidada (if-else-if-else...)
         // Dada una nota, escribir
         // 10: Matricula de Honor
@@ -57,12 +64,14 @@ public class Condicionales {
             }
         }
 
-        /*
-         * ERRONEO: los if no están anidados Por ejemplo falla con nota3 a 10 que
-         * escribe Matricula de Honor y Sobresaliente if (nota3 == 10) {
-         * System.out.println("p.Matricula de Honor"); } if (nota3 >= 9) {
-         * System.out.println("p.Sobresaliente"); }
-         */
+        // ERRONEO: los if no están anidados Por ejemplo falla con nota3 a 10 que
+        // escribe Matricula de Honor y Sobresaliente
+        // if (nota3 == 10) {
+        //    System.out.println("p.Matricula de Honor");
+        // }
+        // if (nota3 >= 9) {
+        //    System.out.println("p.Sobresaliente");
+        // }
 
         // 4. Multiple (switch)
         // Dado un día de la semana en número de 0 a 6, escribir
@@ -104,16 +113,37 @@ public class Condicionales {
         // 14(incluido) a 20(incluido): BUENAS TARDES
         // 20(excluido) a 24(excluido): BUENAS NOCHES
         // MEJORA:
-        // Si hora es menor que cero o 24 o mayor
+        // Si hora es menor que cero o mayor-igual que 24
         // indicar "Hora no válida"
 
-        int hora = 15;
+        //int hora = 21;
+        // pedir hora por consola
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Dime hora: ");
+        int hora = entrada.nextInt();
         String saludo = "";
- 
+        // comprobar si la hora es válida
+        if ((hora >= 0) && (hora < 24)) {
+            // hora valida
+            if (hora >= 0 && hora < 8) {
+                saludo = "BUENAS NOCHES";
+            } else {
+                if (hora >= 8 && hora < 14) {
+                    saludo = "BUENOS DIAS";
+                } else {
+                    if (hora >= 14 && hora <= 20) {
+                        saludo = "BUENAS TARDES";
+                    } else {
+                        saludo = "BUENAS NOCHES";
+                    }
+                }
+            }
+
+        } else {
+            saludo = "*ERROR* Hora no válida";
+        }
         System.out.println("SALUDO: " + saludo);
 
     }
-
-
 
 }

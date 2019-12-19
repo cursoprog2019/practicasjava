@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Bucles",
+            "request": "launch",
+            "mainClass": "tema6.Bucles",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Condicionales",
             "request": "launch",
             "mainClass": "tema6.Condicionales",
