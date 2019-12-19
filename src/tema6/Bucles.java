@@ -22,13 +22,29 @@ public class Bucles {
             System.out.println(numero + " x " + i + " = " + (numero*i) );
         }
 
+        System.out.println("- FOR otra manera -");
+        // es prácticamente idéntico a un while
+        int i = 1;
+        for ( ; i <= 10;) {
+            System.out.println(numero + " x " + i + " = " + (numero*i) );
+            i++;
+        }
+
         // 2.while
         System.out.println("- WHILE -");
-
-
+        i = 1;
+        while (i <= 10) {
+            System.out.println(numero + " x " + i + " = " + (numero*i) );
+            i++;
+        }
 
         // 3.do-while
         System.out.println("- DO-WHILE -");
+        i = 1;
+        do {
+            System.out.println(numero + " x " + i + " = " + (numero*i) );
+            i++;
+        } while (i <= 10);
 
         
     }
