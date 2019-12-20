@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsaMatematicas2",
+            "request": "launch",
+            "mainClass": "tema6.UsaMatematicas2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Adivina",
+            "request": "launch",
+            "mainClass": "tema6.Adivina",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsaMatematicas",
+            "request": "launch",
+            "mainClass": "tema6.UsaMatematicas",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Bucles",
             "request": "launch",
             "mainClass": "tema6.Bucles",
