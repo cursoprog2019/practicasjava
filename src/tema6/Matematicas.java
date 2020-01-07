@@ -74,4 +74,42 @@ public class Matematicas {
         return retorno;
     }
 
+    // Método buscar
+    // devuelve true si lo ha encontrado
+    // y false en caso contrario
+    public static boolean buscar(int[] lista, int numero) {
+        boolean retorno = false;
+        // recorrer el array buscando el numero
+        // y salirse del bucle cuando lo haya encontrado
+        int i = 0;
+        do {
+            if (lista[i] == numero) {
+                // hemos encontrado el numero en la lista
+                retorno = true;
+            }
+            i++;
+        } while ( (i < lista.length) && (retorno == false) );
+
+        return retorno;
+    }
+    // Método buscar
+    // Devuelve la posición donde lo ha encontrado
+    // y -1 sino lo encuentra
+    public static int buscar2(int[] lista, int numero) {
+        int retorno = -1;
+        // recorrer el array buscando el numero
+        // y salirse del bucle cuando lo haya encontrado
+        int i = 0;
+        do {
+            if (lista[i] == numero) {
+                // hemos encontrado el numero en la lista
+                retorno = i;
+            }
+            i++;
+        } while ( (i < lista.length) && (retorno == -1) );
+
+        return retorno;
+    }
+
+
 }

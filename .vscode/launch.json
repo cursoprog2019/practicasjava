@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Adivina3",
+            "request": "launch",
+            "mainClass": "tema6.Adivina3",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Adivina2",
+            "request": "launch",
+            "mainClass": "tema6.Adivina2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UsaMatematicas2",
             "request": "launch",
             "mainClass": "tema6.UsaMatematicas2",

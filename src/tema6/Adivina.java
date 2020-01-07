@@ -23,7 +23,7 @@ public class Adivina {
         Scanner entrada = new Scanner(System.in);
         do {
             // Pedir un número
-            System.out.print("Dime número: ");
+            System.out.print("Dime número(1-100): ");
             numero = entrada.nextInt();
         } while (numero != SECRETO);
         // se sale del while cuando no se cumple la condición

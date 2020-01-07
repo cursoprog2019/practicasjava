@@ -41,6 +41,39 @@ public class UsaMatematicas2 {
         // Calcular el mínimo y el máximo
         System.out.println("Mínimo: " + Matematicas.calcularMinimo(notas));
         System.out.println("Máximo: " + Matematicas.calcularMaximo(notas));
+        // buscar el numero 4
+        if (Matematicas.buscar(notas,4) == true) {
+            System.out.println("He encontrado el 4");
+        } else {
+            System.out.println("No he encontrado el 4");
+        }
+        // buscar el numero 1
+        if (Matematicas.buscar(notas,1) == true) {
+            System.out.println("He encontrado el 1");
+        } else {
+            System.out.println("No he encontrado el 1");
+        }
+        // buscar el numero 7
+        if (Matematicas.buscar(notas,7) == true) {
+            System.out.println("He encontrado el 7");
+        } else {
+            System.out.println("No he encontrado el 7");
+        }
+        // buscar la posición del numero 7
+        int posicion = Matematicas.buscar2(notas,7);
+        if (posicion >= 0) {
+            System.out.println("He encontrado el 7 en la posición " + posicion);
+        } else {
+            System.out.println("No he encontrado el 7");
+        }
+        // buscar la posición del numero 1
+        posicion = Matematicas.buscar2(notas,1);
+        if (posicion >= 0) {
+            System.out.println("He encontrado el 1 en la posición " + posicion);
+        } else {
+            System.out.println("No he encontrado el 1");
+        }
+
 
     }
 }

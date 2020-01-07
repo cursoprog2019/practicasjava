@@ -24,8 +24,14 @@ public class Adivina2 {
         Scanner entrada = new Scanner(System.in);
         do {
             // Pedir un número
-            System.out.print("Dime número: ");
+            System.out.print("Dime número (1-100): ");
             numero = entrada.nextInt();
+            if (numero > SECRETO) {
+                System.out.println("FALLO: Es menor");
+            }
+            if (numero < SECRETO) {
+                System.out.println("FALLO: Es mayor");
+            }
             
 
         } while (numero != SECRETO);
