@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsaUtil",
+            "request": "launch",
+            "mainClass": "tema7.UsaUtil",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Adivina3",
             "request": "launch",
             "mainClass": "tema6.Adivina3",

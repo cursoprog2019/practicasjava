@@ -67,10 +67,10 @@ public class Condicionales {
         // ERRONEO: los if no están anidados Por ejemplo falla con nota3 a 10 que
         // escribe Matricula de Honor y Sobresaliente
         // if (nota3 == 10) {
-        //    System.out.println("p.Matricula de Honor");
+        // System.out.println("p.Matricula de Honor");
         // }
         // if (nota3 >= 9) {
-        //    System.out.println("p.Sobresaliente");
+        // System.out.println("p.Sobresaliente");
         // }
 
         // 4. Multiple (switch)
@@ -116,7 +116,7 @@ public class Condicionales {
         // Si hora es menor que cero o mayor-igual que 24
         // indicar "Hora no válida"
 
-        //int hora = 21;
+        // int hora = 21;
         // pedir hora por consola
         Scanner entrada = new Scanner(System.in);
         System.out.print("Dime hora: ");
