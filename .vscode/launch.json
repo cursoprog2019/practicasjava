@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio4",
+            "request": "launch",
+            "mainClass": "ejercicios2.Ejercicio4",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio3",
+            "request": "launch",
+            "mainClass": "ejercicios2.Ejercicio3",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio2",
+            "request": "launch",
+            "mainClass": "ejercicios2.Ejercicio2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio1",
+            "request": "launch",
+            "mainClass": "ejercicios2.Ejercicio1",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UsaUtil",
             "request": "launch",
             "mainClass": "tema7.UsaUtil",
