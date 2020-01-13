@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayMulti",
+            "request": "launch",
+            "mainClass": "tema7.ArrayMulti",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BucleAnidado",
+            "request": "launch",
+            "mainClass": "tema7.BucleAnidado",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio10",
+            "request": "launch",
+            "mainClass": "ejercicios2.Ejercicio10",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Ejercicio9",
             "request": "launch",
             "mainClass": "ejercicios2.Ejercicio9",
