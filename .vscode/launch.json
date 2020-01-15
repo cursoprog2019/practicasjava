@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayMulti_v2",
+            "request": "launch",
+            "mainClass": "tema7.ArrayMulti_v2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayMulti",
             "request": "launch",
             "mainClass": "tema7.ArrayMulti",

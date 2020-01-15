@@ -15,17 +15,33 @@ public class ArrayMulti_v2 {
         // otra forma de declaración, 
         // donde definimos de tamaño y se inicializa a 0
         int [][] notas2 = new int[2][3];
-        // recorrer el array notas2 y mostrarlo por pantalla
-        // en filas y columnas
-        // al recorrer un array el bucle debe ir
-        // desde 0 hasta el TAMAÑO - 1
+        int [][] notas3 = new int[3][5];
+        int numAsignaturas;
+        int numAlumnos ;
+        //
         System.out.println("Array notas");
         UtilArray.escribirNotas(notas);
-        // pedir las notas de todas las asignaturas y de todos alumnos
+        //
+        /*
         System.out.println("Array notas2");
-        UtilArray.pedirNotas(notas2);
-        // mostrar las notas2 (por asignatura y por alumno)
+        notas2 = UtilArray.pedirNotas(2,3);
         UtilArray.escribirNotas(notas2);
+        */
+        //
+        /*
+        System.out.println("Array notas3");
+        notas3 = UtilArray.pedirNotas(3,5);
+        UtilArray.escribirNotas(notas3);
+        */
+        //
+        System.out.println("Array notas4");
+        System.out.print("Dime número de asignaturas: ");
+        numAsignaturas = entrada.nextInt();
+        System.out.print("Dime número de alumnos: "); 
+        numAlumnos = entrada.nextInt();
+        int[][] notas4 = new int[numAsignaturas][numAlumnos];
+        notas4 = UtilArray.pedirNotas(numAsignaturas,numAlumnos);
+        UtilArray.escribirNotas(notas4);
     }
 
 }
