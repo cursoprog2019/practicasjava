@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JuegoBarcos_v3",
+            "request": "launch",
+            "mainClass": "tema7.JuegoBarcos_v3",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JuegoBarcos_v2",
+            "request": "launch",
+            "mainClass": "tema7.JuegoBarcos_v2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JuegoBarcos",
+            "request": "launch",
+            "mainClass": "tema7.JuegoBarcos",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayMulti_v2",
             "request": "launch",
             "mainClass": "tema7.ArrayMulti_v2",
