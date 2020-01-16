@@ -3,11 +3,13 @@ package tema7;
 import java.util.Scanner;
 
 /**
- * JuegoBarcos_v2 MEJORAS: 1.- Tablero de tamaño variable. Se pide al usuario.
- * 2.- El barco se coloca en una posición aleatoria 3.- Se controla el rango de
- * la fila y columna 4.- Llevar control del número de intentos NUEVAS MEJORAS
- * 5.- Dibujar el tablero al final (- agua, B barco) 6.- Dibujar el tablero al
- * final (- agua, x disparo, B barco)
+ * JuegoBarcos_v2 MEJORAS: 
+ * 1.- Tablero de tamaño variable. Se pide al usuario.
+ * 2.- El barco se coloca en una posición aleatoria 
+ * 3.- Se controla el rango de la fila y columna
+ * 4.- Llevar control del número de intentos NUEVAS MEJORAS
+ * 5.- Dibujar el tablero al final (- agua, B barco) 
+ * 6.- Dibujar el tablero al final (- agua, x disparo, B barco)
  */
 public class JuegoBarcos_v3 {
 
@@ -60,6 +62,9 @@ public class JuegoBarcos_v3 {
             } while (columna < 0 || columna >= tamano);
             // incrementamos el número de intentos
             intentos++;
+            // guardar el disparo (fila,columna)
+            disparos[fila][columna] = true;
+            //
             if (tablero[fila][columna] == false) { // no hay barco
                 System.out.println("AGUA! Sigue intentándolo!");
             } else { // hay barco
@@ -67,8 +72,6 @@ public class JuegoBarcos_v3 {
                 System.out.println("HUNDIDO en " + intentos + " intentos");
             }
         } while (tablero[fila][columna] == false);
-        // mientras el disparo sea agua, repetimos
-
         // mientras el disparo sea agua, repetimos
 
         // Dibujar el tablero al final (- agua, B barco)
@@ -86,9 +89,9 @@ public class JuegoBarcos_v3 {
             for (int c = 0; c < tamano; c++) {
                 System.out.print(" ");
                 if (tablero[f][c] == false) {
-                    System.out.print("-");
+                    System.out.print("-"); // agua
                 } else {
-                    System.out.print("B");
+                    System.out.print("B"); // Barco
                 }
 
             }
@@ -109,12 +112,17 @@ public class JuegoBarcos_v3 {
             System.out.print(f);
             for (int c = 0; c < tamano; c++) {
                 System.out.print(" ");
-                if (tablero[f][c] == false) {
-                    System.out.print("-");
+                if (!tablero[f][c]) { // no hay barco
+                // equivalente a: if (tablero[f][c] == false)
+                    if (disparos[f][c]) {
+                        // equivalente a: if (disparos[f][c] == true)
+                        System.out.print("x"); // hay disparo
+                    } else {
+                        System.out.print("-"); // no hay disparo y tampoco hay barco
+                    }
                 } else {
-                    System.out.print("B");
+                    System.out.print("B"); // hay barco
                 }
-
             }
             System.out.println(); // cambio de línea
         }
