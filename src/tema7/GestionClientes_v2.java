@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * GestionClientes
  */
-public class GestionClientes {
+public class GestionClientes_v2 {
 
     public static void menu() {
         System.out.println("********************");
@@ -15,7 +15,8 @@ public class GestionClientes {
         System.out.println("1.- Añadir");
         System.out.println("2.- Borrar");
         System.out.println("3.- Listar");
-        System.out.println("4.- Salir");
+        System.out.println("4.- Calcular Media");
+        System.out.println("5.- Salir");
         System.out.println("--------------------");
     }
 
@@ -68,10 +69,23 @@ public class GestionClientes {
 
     }
 
+    private static double CalcularMedia(ArrayList<Cliente> listaClientes) {
+        double media;
+        int suma = 0;
+        // recorrer todo el array sumando las edades
+        for (int i = 0; i < listaClientes.size(); i++) {
+            suma += listaClientes.get(i).getEdad();
+        }
+        // dividir la suma por el número de clientes
+        media = (double)suma / listaClientes.size();
+        return media;
+    }
+
     public static void main(String[] args) {
         ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
         Scanner entrada = new Scanner(System.in);
         int opcion;
+        double media;
         do {
             menu();
             // pedir opción
@@ -90,13 +104,18 @@ public class GestionClientes {
                 case 3:
                     ListarClientes(listaClientes);
                     break;
+                case 4:
+                    media = CalcularMedia(listaClientes);
+                    System.out.println("La media de edad es " + media);
                 default:
                     break;
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
         entrada.close();
     }
+
+
 
  
 }
