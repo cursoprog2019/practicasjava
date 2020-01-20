@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GestionClientes",
+            "request": "launch",
+            "mainClass": "tema7.GestionClientes",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayListEjemplo",
+            "request": "launch",
+            "mainClass": "tema7.ArrayListEjemplo",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CrearArchivo",
+            "request": "launch",
+            "mainClass": "CrearArchivo",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LecturaEscrituraFichero",
+            "request": "launch",
+            "mainClass": "LecturaEscrituraFichero",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SortArray",
             "request": "launch",
             "mainClass": "tema7.SortArray",
