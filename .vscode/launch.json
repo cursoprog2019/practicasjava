@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PasoDeParametros",
+            "request": "launch",
+            "mainClass": "repaso.PasoDeParametros",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ficheros",
             "request": "launch",
             "mainClass": "tema8.ficheros",
