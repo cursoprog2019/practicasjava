@@ -17,7 +17,7 @@ public class ficheros {
 
     private static void escribir() {
         FileWriter fichero;
-        fichero = new FileWriter("c:\\datos\\fichero.txt");
+        fichero = new FileWriter("C:\\datos\\fichero.txt");
         fichero.close();
     }
 }
