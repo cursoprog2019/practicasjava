@@ -7,7 +7,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 /**
- * ficheros2 leer un fichero de texto y escribirlo en otro numerando las lineas
+ * ficheros2 
+ * leer un fichero de texto 
+ * y escribirlo en otro numerando las lineas
  */
 public class ficheros2 {
 

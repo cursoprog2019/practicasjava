@@ -8,8 +8,8 @@ import java.io.PrintWriter;
 
 /**
  * ficheros
- * escribir en un fichero de texto, leer el contenido
- * y escribirlo por pantalla
+ * escribir en un fichero de texto, 
+ * leer el contenido y escribirlo por pantalla
  */
 public class ficheros {
 

@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ficheros4leer",
+            "request": "launch",
+            "mainClass": "tema8.ficheros4leer",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ficheros4escribir",
+            "request": "launch",
+            "mainClass": "tema8.ficheros4escribir",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ficheros3",
+            "request": "launch",
+            "mainClass": "tema8.ficheros3",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ficheros2",
             "request": "launch",
             "mainClass": "tema8.ficheros2",
