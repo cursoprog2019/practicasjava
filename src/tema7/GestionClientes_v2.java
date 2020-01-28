@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * GestionClientes
+ * Añadimos calcular media
  */
 public class GestionClientes_v2 {
 
