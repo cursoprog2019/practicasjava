@@ -12,6 +12,7 @@ public class Agenda {
         ArrayList<String> listaContactos = new ArrayList<String>();
         Scanner entrada = new Scanner(System.in);
         int opcion;
+        String filtro;
         // leer los contactos del fichero contactos.txt
         LibreriaAgenda.LeerContactos(listaContactos);
         do {
@@ -29,6 +30,18 @@ public class Agenda {
                     break;
                 case 3:
                     LibreriaAgenda.GuardarContactos(listaContactos);
+                    break;
+                case 4:
+                    filtro = entrada.nextLine(); // lee el intro 
+                    System.out.print("Contacto a buscar: ");
+                    filtro = entrada.nextLine();
+                    LibreriaAgenda.BuscarContactos(listaContactos, filtro);
+                    break;
+                case 5:
+                    filtro = entrada.nextLine(); // lee el intro 
+                    System.out.print("Contacto a borrar: ");
+                    filtro = entrada.nextLine();
+                    LibreriaAgenda.BorrarContactos(listaContactos, filtro);
                     break;
                 default:
                     break;
