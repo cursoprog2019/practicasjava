@@ -13,6 +13,11 @@ import java.util.Scanner;
 public class LibreriaAgenda {
 
     private static final String NOMBRE_FICHERO = "c:/datos/contactos.txt";
+    // Declaramos una variable "chivato" para controlar cuando hay cambios
+    // Se inicializa a false y se pondría true cuando añadimos o borramos
+    // Se pone otra vez a false cuando guardemos
+    // La utilizamos para avisar si ha habido cambios cuando salimos
+    public static boolean hayCambios = false;
 
     public static void menu() {
         System.out.println("**************");
@@ -20,7 +25,11 @@ public class LibreriaAgenda {
         System.out.println("**************");
         System.out.println("1.- Añadir");
         System.out.println("2.- Listar");
-        System.out.println("3.- Guardar");
+        if (hayCambios) {
+            System.out.println("3.- Guardar*");
+        } else {
+            System.out.println("3.- Guardar");
+        }
         System.out.println("4.- Buscar");
         System.out.println("5.- Borrar");
         System.out.println("9.- Salir");
@@ -40,13 +49,14 @@ public class LibreriaAgenda {
         System.out.println("---------------");
         // Añadir contacto a la lista
         listaContactos.add(nombre + ": " + telefono);
+        hayCambios = true;
     }
 
     public static void ListarContactos(ArrayList<String> listaContactos) {
         System.out.println("* LISTADO DE CONTACTOS *");
         for (int i = 0; i < listaContactos.size(); i++) {
             // recuperar nombre y teléfono de la lista de contactos
-            System.out.println(listaContactos.get(i));
+            System.out.println( (i+1) + ".- " + listaContactos.get(i));
         }
     }
 
@@ -67,6 +77,8 @@ public class LibreriaAgenda {
             // cerrar fichero
             fichero.close();
             System.out.println("Contactos guardados");
+            // reseteamos la variable que nos avisa de los cambios
+            hayCambios = false;
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
@@ -119,26 +131,10 @@ public class LibreriaAgenda {
         }
     }
 
-    public static void BorrarContactos(ArrayList<String> listaContactos, String filtro) {
-        String contacto;
-        boolean encontrado = false; // suponemos que no lo ha encontrado
-        System.out.println("* CONTACTOS BORRADOS *");
-        for (int i = 0; i < listaContactos.size(); i++) {
-            // mostrar solamente los que cumplan con el filtro
-            contacto = listaContactos.get(i);
-            if (contacto.toUpperCase().contains(filtro.toUpperCase())) {
-                // si contacto contiene la cadena filtro
-                // antes pasamos contacto y filtro a mayúsculas
-                // para evitar que sea sensible a mayúsculas/minúsculas
-                // borrar de la lista
-                listaContactos.remove(i);
-                System.out.println(contacto + " - borrado");
-                encontrado = true; // lo ha encontrado
-            } 
-        }
-        if (!encontrado) { // entra si encontrado sigue a false
-            System.out.println(filtro + " no encontrado");
-        }
+    public static void BorrarContactos(ArrayList<String> listaContactos, int numero) {
+        listaContactos.remove(numero-1);
+        System.out.println("Contacto número " + numero + " borrado");
+        hayCambios = true;
     }
 
 }
