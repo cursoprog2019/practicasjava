@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ficheros6",
+            "request": "launch",
+            "mainClass": "tema8.ficheros6",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ficheros5",
+            "request": "launch",
+            "mainClass": "tema8.ficheros5",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - External Terminal",
+            "request": "launch",
+            "console": "externalTerminal",
+            "mainClass": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Agenda",
             "request": "launch",
             "mainClass": "tema8.Agenda",
