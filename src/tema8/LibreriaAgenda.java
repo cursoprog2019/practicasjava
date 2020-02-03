@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class LibreriaAgenda {
 
-    private static final String NOMBRE_FICHERO = "c:/datos/contactos.txt";
+    private static final String NOMBRE_FICHERO = "/datos/contactos.txt";
     // Declaramos una variable "chivato" para controlar cuando hay cambios
     // Se inicializa a false y se pondría true cuando añadimos o borramos
     // Se pone otra vez a false cuando guardemos

@@ -10,7 +10,7 @@ public class Agenda {
 
     public static void main(String[] args) {
         ArrayList<String> listaContactos = new ArrayList<String>();
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in,"UTF-8");
         int opcion;
         String filtro;
         int numero;
