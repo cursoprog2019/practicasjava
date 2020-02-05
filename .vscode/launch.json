@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PaginaWeb",
+            "request": "launch",
+            "mainClass": "tema8.PaginaWeb",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - crearDirectorios_v2",
             "request": "launch",
             "mainClass": "tema8.crearDirectorios_v2",

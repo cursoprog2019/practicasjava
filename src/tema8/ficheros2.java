@@ -42,7 +42,7 @@ public class ficheros2 {
             } while (linea != null);
             // cerrar ficheros
             fichero.close();
-            //fichero2.close();
+            fichero2.close();
         }
         catch (Exception e) { // Exception es la más general de las excepciones
                               // Aqui salta cuando se produce cualquier excepción
