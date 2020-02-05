@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 /**
  * crearDirectorios
- * crea una estructura de carper
+ * crea una estructura de carpetas, unas dentro de otras.
+ * Las carpetas qie se crean son fijas
  */
 public class crearDirectorios {
 
