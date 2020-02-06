@@ -6,13 +6,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.net.URLConnection;
 
 /**
- * PaginaWeb
- * lee una página web y la guarda en un fichero
+ * PaginaWeb2
+ * Lee una página web y la guarda en un fichero
+ * Reduce las instrucciones de lectura
  */
-public class PaginaWeb {
+public class PaginaWeb2 {
 
     public static void main(String[] args) {
         FileWriter fichero = null;
@@ -24,14 +24,11 @@ public class PaginaWeb {
             // definir la URL a leer ("UBICACIÓN")
             URL direccion = new URL("http://www.internic.net/");
             
-            // abrir la conexión a esa dirección ("EXCAVADORA")
-            URLConnection conexion = direccion.openConnection();
-
             // abrir un canal de entrada para esa conexión ("TUNEL")
             // en este punto se conecta a internet y fallaria si
             // la dirección es incorrecta o no tenemos internet
             System.out.println("Conectando a Internet...");
-            InputStream canalEntrada = conexion.getInputStream();
+            InputStream canalEntrada = direccion.openStream();
 
             // crear lector del canal de entrada ("VIA")
             InputStreamReader lector = new InputStreamReader(canalEntrada);
@@ -42,7 +39,7 @@ public class PaginaWeb {
             /****** FICHERO DONDE ESCRIBIMOS LA PAGINA WEB *********/
 
             // abrir fichero para escritura
-            fichero = new FileWriter("/datos/paginaweb.html");
+            fichero = new FileWriter("/datos/paginaweb2.html");
             // abrir canal de escritura en el fichero
             salida = new PrintWriter(fichero);
 
