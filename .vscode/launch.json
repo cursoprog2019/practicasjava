@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - conexion",
+            "request": "launch",
+            "mainClass": "basedatos.conexion",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Descarga2",
             "request": "launch",
             "mainClass": "tema8.Descarga2",
