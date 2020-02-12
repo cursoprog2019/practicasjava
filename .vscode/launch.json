@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - agenda",
+            "request": "launch",
+            "mainClass": "basedatos.agenda",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - select2",
+            "request": "launch",
+            "mainClass": "basedatos.select2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - update",
             "request": "launch",
             "mainClass": "basedatos.update",

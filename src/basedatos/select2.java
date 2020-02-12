@@ -15,7 +15,7 @@ public class select2 {
         String driver = "com.mysql.cj.jdbc.Driver"; // MySQL
         // String url = "jdbc:oracle:thin:@localhost:1521:xe"; // ORACLE
         //String url = "jdbc:mysql://remotemysql.com:3306/8QznhvYaIi"; // MySQL
-        String url = "jdbc:mysql://localhost:3306/practicas"; // MySQL
+        String url = "jdbc:mysql://localhost:3306/practicas?serverTimezone=UTC"; // MySQL
         // en vez de localhost se puede poner 127.0.0.1
         // NOTA: Para que funcione correctamente hay que añadir ?serverTimezone=UTC 
         // para definir la zona horaria (sólo funciona para esta conexión)
