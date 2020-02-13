@@ -17,7 +17,7 @@ public class select {
         String url = "jdbc:mysql://remotemysql.com:3306/8QznhvYaIi"; // MySQL
         // estructura de la url: protocolo://servidor:puerto/basedatos
         String usuario = "8QznhvYaIi";
-        String password = "";
+        String password = "z110sAUHju";
         try {
             // 1. Registrar el Driver JDBC
             // (lo carga en tiempo real en la memoria)
