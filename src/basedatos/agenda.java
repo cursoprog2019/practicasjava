@@ -21,6 +21,7 @@ public class agenda {
         //
         ArrayList<Contacto> listaContactos;
         Contacto contacto;
+        int codigo;
         // abrir conexión a la base de datos
         Connection con = bdutil.conexion();
         if (con != null) {
@@ -30,21 +31,27 @@ public class agenda {
                 // pedir opción
                 System.out.print("Dime opción: ");
                 opcion = entrada.nextInt();
+                // por si acaso se desconecta por timeout
+                if (con == null) {
+                    con = bdutil.conexion(); 
+                }
                 //
                 switch (opcion) {
-                    case 1:
-                        contacto = bdutil.pedirContacto(entrada);
-                        bdutil.alta(con,contacto);   
+                    case 1: // ALTA
+                        contacto = bdutil.pedirContacto(entrada); // PRESENTACION
+                        bdutil.alta(con,contacto);                // LOGICA 
                         break;
-                    case 2:
-                        bdutil.baja();
+                    case 2: // BAJA
+                        codigo = bdutil.pedirCodigo(entrada);   // PRESENTACION
+                        bdutil.baja(con,codigo);                // LOGICA
                         break;
-                    case 3:
-                        bdutil.modificacion();
+                    case 3: // MODIFICACION
+                        contacto = bdutil.pedirContacto(entrada); // PRESENTACION
+                        bdutil.modificacion(con,contacto);
                         break;
-                    case 4:
-                        listaContactos = bdutil.consulta(con); // LOGICA
-                        bdutil.escribirResultados(listaContactos); // PRESENTACIÓN
+                    case 4: // CONSULTA
+                        listaContactos = bdutil.consulta(con);      // LOGICA
+                        bdutil.escribirResultados(listaContactos);  // PRESENTACIÓN
                         break;
                     default:
                         break;

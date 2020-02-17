@@ -65,16 +65,46 @@ public class bdutil {
 
     // alta
     public static void alta(Connection con, Contacto contacto) {
+        int codigo = contacto.getCodigo();
+        String nombre = contacto.getNombre();
+        String telefono = contacto.getTelefono();
+        String sql;
+        try {
+            // 3. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 4. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            sql = "INSERT INTO agenda (codigo,nombre,telefono) VALUES ('" + codigo + "','" + nombre + "','" + telefono
+                    + "')";
+            stmt.executeUpdate(sql);
+            System.out.println("Contacto insertado");
+
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
 
     }
 
     // baja
-    public static void baja() {
+    public static void baja(Connection con, int codigo) {
+        String sql;
+        try {
+            // 3. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 4. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            sql = "DELETE FROM agenda WHERE codigo = '" + codigo + "'";
+            if (stmt.executeUpdate(sql) > 0) {
+                System.out.println("Contacto borrado");
+            } else {
+                System.out.println("Contacto no encontrado");
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
 
     }
 
     // modificacion
-    public static void modificacion() {
+    public static void modificacion(Connection con, Contacto contacto) {
 
     }
 
@@ -96,7 +126,8 @@ public class bdutil {
             // 3. Recuperar los resultados ("Vagones de vuelta")
             while (rs.next()) {
                 // usando el nombre de la columna
-                //System.out.println(rs.getString("codigo") + " - " + rs.getString("nombre") + " - " + rs.getString("telefono"));
+                // System.out.println(rs.getString("codigo") + " - " + rs.getString("nombre") +
+                // " - " + rs.getString("telefono"));
                 // crear un objeto de tipo Contacto
                 codigo = rs.getInt("codigo");
                 nombre = rs.getString("nombre");
@@ -113,7 +144,7 @@ public class bdutil {
 
     public static void escribirResultados(ArrayList<Contacto> listaContactos) {
         // recorrer el ArrayList y escribirlo por pantalla
-        //System.out.println("escribirResultados");
+        // System.out.println("escribirResultados");
         int codigo;
         String nombre;
         String telefono;
@@ -127,8 +158,35 @@ public class bdutil {
         }
     }
 
-	public static Contacto pedirContacto(Scanner entrada) {
-		return null;
-	}
+    public static Contacto pedirContacto(Scanner entrada) {
+        Contacto resultado = null;
+        int codigo;
+        String nombre;
+        String telefono;
+        // pedir todos los datos
+        entrada.nextLine(); // leemos el intro que va después de opcion
+        System.out.println("* ALTA CONTACTO *");
+        System.out.print("Código: ");
+        codigo = entrada.nextInt();
+        entrada.nextLine(); // leemos el intro que va después de código
+        System.out.print("Nombre: ");
+        nombre = entrada.nextLine();
+        System.out.print("Teléfono: ");
+        telefono = entrada.nextLine();
+        System.out.println("---------------");
+        // Crear el objeto de tipo Contacto
+        resultado = new Contacto(codigo, nombre, telefono);
+        return resultado;
+    }
+
+    public static int pedirCodigo(Scanner entrada) {
+        int resultado = 0;
+        // pedir el código
+        entrada.nextLine(); // leemos el intro que va después de opcion
+        System.out.println("* BAJA CONTACTO *");
+        System.out.print("Código: ");
+        resultado = entrada.nextInt();
+        return resultado;
+    }
 
 }
