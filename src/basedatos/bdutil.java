@@ -105,6 +105,29 @@ public class bdutil {
 
     // modificacion
     public static void modificacion(Connection con, Contacto contacto) {
+        int codigo = contacto.getCodigo();
+        String nombre = contacto.getNombre();
+        String telefono = contacto.getTelefono();
+        String sql;
+        try {
+            // 3. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 4. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            if (!nombre.isEmpty()) {
+                sql = "UPDATE agenda SET nombre = '" + nombre + "' WHERE codigo = '" + codigo + "'";
+                if (stmt.executeUpdate(sql) > 0) {
+                    System.out.println("Nombre modificado");
+                }
+            }
+            if (!telefono.isEmpty()) {
+                sql = "UPDATE agenda SET telefono = '" + telefono + "' WHERE codigo = '" + codigo + "'";
+                if (stmt.executeUpdate(sql) > 0) {
+                    System.out.println("Teléfono modificado");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
 
     }
 
@@ -165,7 +188,6 @@ public class bdutil {
         String telefono;
         // pedir todos los datos
         entrada.nextLine(); // leemos el intro que va después de opcion
-        System.out.println("* ALTA CONTACTO *");
         System.out.print("Código: ");
         codigo = entrada.nextInt();
         entrada.nextLine(); // leemos el intro que va después de código
@@ -188,5 +210,25 @@ public class bdutil {
         resultado = entrada.nextInt();
         return resultado;
     }
+
+	public static boolean existeCodigo(Connection con, int codigo) {
+        boolean resultado = false;
+        String sql;
+        try {
+            // El "TUNEL" ya lo tenemos, que es la variable "con"
+            // 1. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            sql = "SELECT * FROM agenda WHERE codigo = '" + codigo + "'"; 
+            ResultSet rs = stmt.executeQuery(sql);
+            // 3. Recuperar los resultados ("Vagones de vuelta")
+            if (rs.next()) { // devuelve al menos una fila
+               resultado = true;
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }    
+		return resultado;
+	}
 
 }

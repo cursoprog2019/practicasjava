@@ -38,16 +38,32 @@ public class agenda {
                 //
                 switch (opcion) {
                     case 1: // ALTA
+                        System.out.println("* ALTA CONTACTO *");
                         contacto = bdutil.pedirContacto(entrada); // PRESENTACION
-                        bdutil.alta(con,contacto);                // LOGICA 
+                        if (bdutil.existeCodigo(con, contacto.getCodigo())) {
+                            System.out.println("Código ya existente");
+                        } else {
+                            bdutil.alta(con,contacto);                // LOGICA 
+                        }
                         break;
                     case 2: // BAJA
                         codigo = bdutil.pedirCodigo(entrada);   // PRESENTACION
-                        bdutil.baja(con,codigo);                // LOGICA
+                        if (bdutil.existeCodigo(con, codigo)) {
+                            bdutil.baja(con,codigo);            // LOGICA
+                        } else {
+                            System.out.println("Código no encontrado");
+                        }
                         break;
                     case 3: // MODIFICACION
+                        System.out.println("* MODIFICACION CONTACTO *");
+                        System.out.println("Introduce el código a modificar");
+                        System.out.println("Después rellena cada campo y si no quieres modificarlo pulsa sólo INTRO");
                         contacto = bdutil.pedirContacto(entrada); // PRESENTACION
-                        bdutil.modificacion(con,contacto);
+                        if (bdutil.existeCodigo(con,contacto.getCodigo())) {
+                            bdutil.modificacion(con,contacto);
+                        } else {
+                            System.out.println("Código no encontrado");
+                        }
                         break;
                     case 4: // CONSULTA
                         listaContactos = bdutil.consulta(con);      // LOGICA
