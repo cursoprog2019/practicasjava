@@ -18,10 +18,10 @@ public class bdutil {
         // String driver = "oracle.jdbc.driver.OracleDriver" // ORACLE
         String driver = "com.mysql.cj.jdbc.Driver"; // MySQL
         // String url = "jdbc:oracle:thin:@localhost:1521:xe"; // ORACLE
-        String url = "jdbc:mysql://remotemysql.com:3306/8QznhvYaIi"; // MySQL
+        String url = "jdbc:mysql://remotemysql.com:3306/F5DQRpnXfM"; // MySQL
         // estructura de la url: protocolo://servidor:puerto/basedatos
-        String usuario = "8QznhvYaIi";
-        String password = "";
+        String usuario = "F5DQRpnXfM";
+        String password = "LzbcX6JCLx";
         try {
             // 1. Registrar el Driver JDBC
             // (lo carga en tiempo real en la memoria)
@@ -59,6 +59,7 @@ public class bdutil {
         System.out.println("2.- BAJA");
         System.out.println("3.- MODIFICACION");
         System.out.println("4.- CONSULTA");
+        System.out.println("5.- BUSQUEDA");
         System.out.println("9.- SALIR");
         System.out.println("------------");
     }
@@ -91,7 +92,7 @@ public class bdutil {
             // 3. Crear objeto Statement ("VAGON")
             Statement stmt = con.createStatement();
             // 4. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
-            sql = "DELETE FROM agenda WHERE codigo = '" + codigo + "'";
+            sql = "DELETE FROM agenda WHERE codigo = '" + codigo + "'" ;
             if (stmt.executeUpdate(sql) > 0) {
                 System.out.println("Contacto borrado");
             } else {
@@ -181,7 +182,7 @@ public class bdutil {
         }
     }
 
-    public static Contacto pedirContacto(Scanner entrada) {
+    public static Contacto pedirContacto(Scanner entrada, boolean automatico, Connection con) {
         Contacto resultado = null;
         int codigo;
         String nombre;
@@ -189,8 +190,13 @@ public class bdutil {
         // pedir todos los datos
         entrada.nextLine(); // leemos el intro que va después de opcion
         System.out.print("Código: ");
-        codigo = entrada.nextInt();
-        entrada.nextLine(); // leemos el intro que va después de código
+        if (automatico) {
+            codigo = bdutil.siguienteCodigo(con);
+            System.out.println(codigo);
+        } else {
+            codigo = entrada.nextInt();
+            entrada.nextLine(); // leemos el intro que va después de código
+        }    
         System.out.print("Nombre: ");
         nombre = entrada.nextLine();
         System.out.print("Teléfono: ");
@@ -211,7 +217,7 @@ public class bdutil {
         return resultado;
     }
 
-	public static boolean existeCodigo(Connection con, int codigo) {
+    public static boolean existeCodigo(Connection con, int codigo) {
         boolean resultado = false;
         String sql;
         try {
@@ -219,16 +225,81 @@ public class bdutil {
             // 1. Crear objeto Statement ("VAGON")
             Statement stmt = con.createStatement();
             // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
-            sql = "SELECT * FROM agenda WHERE codigo = '" + codigo + "'"; 
+            sql = "SELECT * FROM agenda WHERE codigo = '" + codigo + "'";
             ResultSet rs = stmt.executeQuery(sql);
             // 3. Recuperar los resultados ("Vagones de vuelta")
             if (rs.next()) { // devuelve al menos una fila
-               resultado = true;
+                resultado = true;
             }
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
-        }    
-		return resultado;
-	}
+        }
+        return resultado;
+    }
+
+    public static String pedirFiltro(Scanner entrada) {
+        String resultado;
+        // pedir el código
+        entrada.nextLine(); // leemos el intro que va después de opcion
+        System.out.println("* BUSQUEDA *");
+        System.out.print("Texto a buscar: ");
+        resultado = entrada.nextLine();
+        return resultado;
+    }
+
+    public static ArrayList<Contacto> consulta(Connection con, String filtro) {
+        // parecido a select.java pero guardando los resultados en un ArrayList
+        System.out.println("** CONSULTA **");
+        ArrayList<Contacto> resultado = new ArrayList<Contacto>();
+        int codigo;
+        String nombre;
+        String telefono;
+        Contacto contacto;
+        String sql;
+        try {
+            // El "TUNEL" ya lo tenemos, que es la variable "con"
+            // 1. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            sql = "SELECT * FROM agenda WHERE nombre LIKE '%" +
+                   filtro + "%' OR telefono LIKE '%"+ filtro + "%'";
+            ResultSet rs = stmt.executeQuery(sql);
+            // 3. Recuperar los resultados ("Vagones de vuelta")
+            while (rs.next()) {
+                // usando el nombre de la columna
+                // System.out.println(rs.getString("codigo") + " - " + rs.getString("nombre") +
+                // " - " + rs.getString("telefono"));
+                // crear un objeto de tipo Contacto
+                codigo = rs.getInt("codigo");
+                nombre = rs.getString("nombre");
+                telefono = rs.getString("telefono");
+                contacto = new Contacto(codigo, nombre, telefono);
+                // añadir el objeto al ArrayList resultado
+                resultado.add(contacto);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        return resultado;
+    }
+
+    public static int siguienteCodigo(Connection con) {
+        int resultado = 1;
+        String sql;
+        try {
+            // El "TUNEL" ya lo tenemos, que es la variable "con"
+            // 1. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            sql = "SELECT MAX(codigo) as maximo FROM agenda";
+            ResultSet rs = stmt.executeQuery(sql);
+            // 3. Recuperar los resultados ("Vagones de vuelta")
+            rs.next();  // devuelve una fila con el máximo
+            resultado = rs.getInt("maximo") + 1;
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        return resultado;
+    }
 
 }
