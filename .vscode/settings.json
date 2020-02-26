@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\Amalia\\Desktop\\visual studio code\\DriverJDBC\\MySQL\\mysql-connector-java-8.0.19.jar"
+        "c:\\Users\\Amalia\\Desktop\\visual studio code\\DriverJDBC\\MySQL\\mysql-connector-java-8.0.19.jar",
+        "c:\\Users\\Amalia\\Desktop\\visual studio code\\DriverJDBC\\Oracle\\ojdbc8.jar"
     ]
 }

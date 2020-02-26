@@ -84,6 +84,12 @@ public class agenda {
                             System.out.println("No encontrado");
                         }
                         break;
+                    case 6: // CONSULTA ORDENADA
+                        listaContactos = bdutil.consultaOrdenada(con); // LOGICA
+                        bdutil.escribirResultados(listaContactos); // PRESENTACIÓN
+                        break;
+
+
                     default:
                         break;
                 }

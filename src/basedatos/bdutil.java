@@ -15,13 +15,14 @@ public class bdutil {
     // conexion
     public static Connection conexion() {
         Connection con = null;
-        // String driver = "oracle.jdbc.driver.OracleDriver" // ORACLE
+        //String driver = "oracle.jdbc.driver.OracleDriver" // ORACLE
         String driver = "com.mysql.cj.jdbc.Driver"; // MySQL
-        // String url = "jdbc:oracle:thin:@localhost:1521:xe"; // ORACLE
-        String url = "jdbc:mysql://remotemysql.com:3306/F5DQRpnXfM"; // MySQL
+        //String url = "jdbc:oracle:thin:@192.168.1.76:1521/XEPDB1"; // ORACLE
+        //String url = "jdbc:mysql://remotemysql.com:3306/F5DQRpnXfM"; // MySQL
+        String url = "jdbc:mysql://db4free.net:3306/cursoprog2019"; // MySQL
         // estructura de la url: protocolo://servidor:puerto/basedatos
-        String usuario = "F5DQRpnXfM";
-        String password = "LzbcX6JCLx";
+        String usuario = "cursoprog2019";
+        String password = "";
         try {
             // 1. Registrar el Driver JDBC
             // (lo carga en tiempo real en la memoria)
@@ -60,6 +61,7 @@ public class bdutil {
         System.out.println("3.- MODIFICACION");
         System.out.println("4.- CONSULTA");
         System.out.println("5.- BUSQUEDA");
+        System.out.println("6.- CONSULTA ORDENADA");
         System.out.println("9.- SALIR");
         System.out.println("------------");
     }
@@ -147,6 +149,40 @@ public class bdutil {
             Statement stmt = con.createStatement();
             // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
             ResultSet rs = stmt.executeQuery("SELECT * FROM agenda");
+            // 3. Recuperar los resultados ("Vagones de vuelta")
+            while (rs.next()) {
+                // usando el nombre de la columna
+                // System.out.println(rs.getString("codigo") + " - " + rs.getString("nombre") +
+                // " - " + rs.getString("telefono"));
+                // crear un objeto de tipo Contacto
+                codigo = rs.getInt("codigo");
+                nombre = rs.getString("nombre");
+                telefono = rs.getString("telefono");
+                contacto = new Contacto(codigo, nombre, telefono);
+                // añadir el objeto al ArrayList resultado
+                resultado.add(contacto);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        return resultado;
+    }
+
+    // consulta ordenada
+    public static ArrayList<Contacto> consultaOrdenada(Connection con) {
+        // parecido a select.java pero guardando los resultados en un ArrayList
+        System.out.println("** CONSULTA **");
+        ArrayList<Contacto> resultado = new ArrayList<Contacto>();
+        int codigo;
+        String nombre;
+        String telefono;
+        Contacto contacto;
+        try {
+            // El "TUNEL" ya lo tenemos, que es la variable "con"
+            // 1. Crear objeto Statement ("VAGON")
+            Statement stmt = con.createStatement();
+            // 2. Ejecutar la consulta SQL ("Lanzar el vagón por el tunel")
+            ResultSet rs = stmt.executeQuery("SELECT * FROM agenda ORDER BY nombre");
             // 3. Recuperar los resultados ("Vagones de vuelta")
             while (rs.next()) {
                 // usando el nombre de la columna
@@ -283,6 +319,8 @@ public class bdutil {
         return resultado;
     }
 
+
+    
     public static int siguienteCodigo(Connection con) {
         int resultado = 1;
         String sql;
