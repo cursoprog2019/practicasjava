@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Conexion",
+            "request": "launch",
+            "mainClass": "examen.Conexion",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HolaMundo",
+            "request": "launch",
+            "mainClass": "examen.HolaMundo",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - agenda",
             "request": "launch",
             "mainClass": "basedatos.agenda",
