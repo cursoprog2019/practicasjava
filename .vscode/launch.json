@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Consulta",
+            "request": "launch",
+            "mainClass": "examen.Consulta",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Conexion2",
+            "request": "launch",
+            "mainClass": "examen.Conexion2",
+            "projectName": "practicasjava_86a4be5a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Conexion",
             "request": "launch",
             "mainClass": "examen.Conexion",
